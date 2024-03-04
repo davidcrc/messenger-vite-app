@@ -127,3 +127,15 @@ npm install --save-dev eslint-plugin-simple-import-sort
   },
 }
 ```
+
+# Setting Up Husky and lint-staged
+
+```bash
+npm install --save-dev husky
+```
+
+```bash
+npx husky init
+```
+
+echo "npm run lint" > .husky/pre-commit
