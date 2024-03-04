@@ -53,11 +53,11 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src/"),
+      '@': path.resolve(__dirname, './src/'),
 
-      routes: `${path.resolve(__dirname, "./src/routes/")}`,
+      routes: `${path.resolve(__dirname, './src/routes/')}`,
 
-      services: `${path.resolve(__dirname, "./src/services/")}`,
+      services: `${path.resolve(__dirname, './src/services/')}`,
     },
   },
 });
@@ -75,5 +75,55 @@ export default defineConfig({
       "services/*": ["./src/services/*"]
     }
   }
+}
+```
+
+<!--  -->
+
+# Update eslint
+
+```bash
+npm install eslint-plugin-react --save-dev
+```
+
+```bash
+npm install --save-dev --save-exact prettier
+```
+
+```bash
+npm install -D eslint-config-prettier
+```
+
+- update eslintrc.cjs
+
+```js
+module.exports = {
+  ...
+  extends: [
+    ...
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'eslint-config-prettier'
+  ],
+  ...
+}
+```
+
+# Add simple import sort
+
+```bash
+npm install --save-dev eslint-plugin-simple-import-sort
+```
+
+- update .eslintrc.cjs
+
+```js
+{
+  plugins: [..., 'simple-import-sort'],
+  ...
+  rules: {
+    ...,
+    'simple-import-sort/imports': 'error'
+  },
 }
 ```
