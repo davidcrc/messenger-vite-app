@@ -139,3 +139,50 @@ npx husky init
 ```
 
 echo "npm run lint" > .husky/pre-commit
+
+<!--  -->
+
+# Add tanstack router
+
+```bash
+npm install @tanstack/react-router
+```
+
+```bash
+npm install --save-dev @tanstack/router-vite-plugin
+```
+
+// vite.config.ts
+
+```ts
+import { defineConfig } from 'vite';
+import { TanStackRouterVite } from '@tanstack/router-vite-plugin';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    // ...,
+    TanStackRouterVite(),
+  ],
+});
+```
+
+Create the following files:
+
+src/routes/\_\_root.tsx
+src/routes/index.lazy.tsx
+src/routes/[my_route_1].tsx
+src/routes/[my_route_2].lazy.tsx
+src/main.tsx
+
+- remove App.tsx
+
+```bash
+npm install @tanstack/router-devtools --save
+```
+
+- Optional
+
+```bash
+npm install @tanstack/router-devtools --save
+```
