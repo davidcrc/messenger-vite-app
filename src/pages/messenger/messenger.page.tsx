@@ -1,9 +1,16 @@
 // import { Route } from '@/routes';
 
-const MessengerPage = () => {
-  // const { page } = Route.useSearch();
+import { Content, Sidebar } from '@/components';
 
-  return <div className="h-screen w-full text-blue-700">MessengerPage</div>;
+import styles from './messenger.module.scss';
+
+const MessengerPage = () => {
+  return (
+    <div className={styles.Root}>
+      <Sidebar />
+      <Content />
+    </div>
+  );
 };
 
 export default MessengerPage;

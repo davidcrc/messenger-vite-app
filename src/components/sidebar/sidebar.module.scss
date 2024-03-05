@@ -1,0 +1,51 @@
+.Root {
+  @apply w-[350px] min-h-screen bg-brand-blue text-white;
+}
+
+.Wrapper {
+  @apply flex flex-col;
+
+  &__top {
+    @apply flex h-[70px] items-center justify-between  border-b-brand-border border-b-2 border-solid py-0 px-4;
+
+    &__new-conversation {
+      @apply text-[1.2rem];
+    }
+  }
+
+  &__bottom {
+    @apply flex h-[70px] items-center border-t-brand-border border-t-2 border-solid;
+  }
+
+  &__center {
+    @apply flex flex-col h-[calc(100vh-140px)];
+
+    &__search-wrapper {
+      @apply h-[60px] flex items-center border-b-brand-border;
+
+      &__input-wrapper {
+        @apply flex items-center bg-brand-bg-light h-10 w-full rounded-[0.3rem] my-0 mx-4;
+
+        i {
+          @apply h-full w-10 flex items-center justify-center text-[1.2rem];
+        }
+
+        input {
+          @apply h-full w-full border-none outline-none bg-transparent text-base py-0 px-2 text-white;
+
+          ::placeholder {
+            @apply text-gray-200;
+          }
+        }
+      }
+    }
+
+    &__center-wrapper {
+      @apply h-[calc(100%-60px)] overflow-y-auto;
+
+      &__items-wrapper {
+        @apply flex flex-col;
+      }
+    }
+  }
+}
